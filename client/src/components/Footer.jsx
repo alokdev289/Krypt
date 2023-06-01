@@ -18,22 +18,49 @@ const handleChange=()=>{
         <img src={logo} alt="logo" className="w-32" />
       </div>
       <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
-        <button className="text-white text-base text-center mx-2 cursor-pointer" onClick={handleChange}>Market</button>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">Exchange</p>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">Tutorials</p>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">Wallets</p>
+      <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
+
+        <li className={`mx-4 cursor-pointer `}>
+        <a
+        href="https://crypto-hunter.netlify.app/"
+
+        rel="noreferrer"
+      >
+        Market
+      </a>
+      </li>
+        <li className={`mx-4 cursor-pointer `}>
+        <a
+        href="https://wazirx.com/exchange/BTC-INR"
+
+        rel="noreferrer"
+      >
+        Exchange
+      </a>
+        </li>
+        <li className={`mx-4 cursor-pointer`}>
+        <a
+        href="https://ethereum.org/en/learn/"
+
+        rel="noreferrer"
+      >
+        Tutorial
+      </a>
+        </li>
+    
+      </ul>
       </div>
     </div>
 
     <div className="flex justify-center items-center flex-col mt-5">
       <p className="text-white text-sm text-center">Come join us and hear for the unexpected miracle</p>
-      <p className="text-white text-sm text-center font-medium mt-2">info@kryptomastery.com</p>
+      {/* <p className="text-white text-sm text-center font-medium mt-2">info@kryptomastery.com</p> */}
     </div>
 
     <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 " />
 
     <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
-      <p className="text-white text-left text-xs">@kryptomastery2023</p>
+      {/* <p className="text-white text-left text-xs">@kryptomastery2023</p> */}
       <p className="text-white text-right text-xs">All rights reserved</p>
     </div>
   </div>

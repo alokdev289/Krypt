@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 
 import logo from "../../images/logo.png";
+import { TransactionContext } from "../context/TransactionContext";
 
 
 const NavBarItem = ({ title, classprops }) => (
@@ -11,6 +12,7 @@ const NavBarItem = ({ title, classprops }) => (
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const { connectWallet } = useContext(TransactionContext);
 
   return (
     <nav className="w-full flex md:justify-center justify-between items-center p-4">
@@ -18,12 +20,49 @@ const Navbar = () => {
         <img src={logo} alt="logo" className="w-32 cursor-pointer" />
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
-        {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
+        {/* {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
           <NavBarItem key={item + index} title={item} />
-        ))}
-        <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
-          Login
+        ))} */}
+        <li className={`mx-4 cursor-pointer `}>
+        <a
+        href="https://crypto-hunter.netlify.app/"
+        // target="_blank"
+        rel="noreferrer"
+      >
+        Market
+      </a>
+      </li>
+        <li className={`mx-4 cursor-pointer `}>
+        <a
+        href="https://wazirx.com/exchange/BTC-INR"
+        // target="_blank"
+        rel="noreferrer"
+      >
+        Exchange
+      </a>
         </li>
+        <li className={`mx-4 cursor-pointer`}>
+        <a
+        href="https://ethereum.org/en/learn/"
+        // target="_blank"
+        rel="noreferrer"
+      >
+        Tutorial
+      </a>
+        </li>
+        <li className={`mx-4 cursor-pointer `}>
+        <a
+        // href="https://crypto-hunter.netlify.app/"
+        onClick={connectWallet}
+        // target="_blank"
+        rel="noreferrer"
+      >
+        Wallet
+      </a>
+        </li>
+        {/* <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
+          Login
+        </li> */}
       </ul>
       <div className="flex relative">
         {!toggleMenu && (
